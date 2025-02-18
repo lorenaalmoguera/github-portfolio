@@ -24,9 +24,10 @@ body {
 }
 
 b {
-  color:orange;
-  text-shadow: gold 1px 0 10px;
+  color: #9e6f9e;;
+  text-shadow: #593e59 1px 0 20px;
 }
+
 h2 { 
 	font: bold 2em monospace;
   color: black;

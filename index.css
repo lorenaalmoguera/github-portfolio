@@ -5,10 +5,61 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Arial, sans-serif;
     background-color: #f0f0f0;
   }
-  
+
+/* Standard Keyframes (Required) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* WebKit Keyframes (For Safari & iOS) */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h2 { 
+	font: bold 2em monospace;
+  color: black;
+  margin-left: 100px;
+	border-right: .1em solid black;
+	width: calc(0.55em * 14); 
+	width: 23ch;
+	white-space: nowrap;
+	overflow: hidden;
+/* Standard Animation + WebKit Animation for Cross-Browser Compatibility */
+animation: typing 8s steps(23, end),
+blink-caret .5s step-end infinite alternate;
+-webkit-animation: typing 8s steps(23, end),
+        blink-caret .5s step-end infinite alternate;
+}
+
+/* Standard Keyframes for Typing */
+@keyframes typing {
+from { width: 0; }
+to { width: 23ch; }
+}
+
+/* WebKit Keyframes for Typing (Safari/iOS) */
+@-webkit-keyframes typing {
+from { width: 0; }
+to { width: 23ch; }
+}
+
+/* Standard Keyframes for Caret Blinking */
+@keyframes blink-caret {
+from, to { border-color: transparent; }
+50% { border-color: black; }
+}
+
+/* WebKit Keyframes for Caret Blinking */
+@-webkit-keyframes blink-caret {
+from, to { border-color: transparent; }
+50% { border-color: black; }
+}
  /* COMMON STYLES FOR BACKGROUND */
     /* COMMON STYLE for all background layers */
     .common-style {
@@ -121,8 +172,8 @@ body {
 /* ============================= */
 .popup-window {
     position: fixed;
-    top: 470px;
-    left: calc(50% + 180px);
+    top: 340px;
+    left: calc(50% + 190px);
     width: 360px;
     height: 280px;
     background-color: #f5f5f7; /* Soft mac-like background */
@@ -131,7 +182,8 @@ body {
     overflow: hidden;
     z-index: 150;
     border: 1px solid #dcdcdc;
-    animation: fadeIn 0.4s ease-out;
+    animation: fadeIn 0.5s ease-in-out;
+    -webkit-animation: fadeIn 0.5s ease-in-out;
   }
   
   /* POPUP HEADER - MAC STYLE */
@@ -270,15 +322,24 @@ body {
     z-index: 10; /* Icons on top */
   }
   
-  .dock-icon img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.2s ease-in-out;
-    opacity: 1; /* Icons stay fully visible */
-    z-index: 10;
-  }
+/* Dock Icon Styling */
+.dock-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  
+  /* Adaptive Shadow - Follows Image Shape */
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Hover Effect: Larger Icon & Stronger Shadow */
+.dock-icon:hover img {
+  transform: scale(1.5);
+  filter: drop-shadow(5px 5px 12px rgba(0, 0, 0, 0.7));
+}
+
   
   /* DOCK ICON LABELS */
 /* Style for Dock Icon Titles */

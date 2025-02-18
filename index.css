@@ -9,39 +9,341 @@ body {
     background-color: #f0f0f0;
   }
   
-  .container {
-    width: 400px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ /* COMMON STYLES FOR BACKGROUND */
+    /* COMMON STYLE for all background layers */
+    .common-style {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100; /* Behind all content */
+    }
+    
+    /* Background Animation */
+    .bg-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+    }
+    
+    .bg-animation > div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        will-change: opacity;
+    }
+    
+    /* Gradient Layers */
+    .bg-1 {
+        background: linear-gradient(180deg, #f9dea1 60%, #9bdaff 100%);
+
+    }
+    
+    .bg-2 {
+        background: linear-gradient(300deg, #c3f9f4 60%, #b7ff9b 100%);
+        animation: bg-fade-1 6s ease-in-out infinite alternate;
+    }
+    
+    .bg-3 {
+        background: linear-gradient(10deg, #e2e6b7 60%, #ff9bd2 100%);
+        animation: bg-fade-2 6s ease-in-out infinite alternate;
+    }
+    
+    /* Fading Animations */
+    @keyframes bg-fade-1 {
+        0% { opacity: 1; }
+        25% { opacity: 0.8; }
+        50% { opacity: 0.5; }
+        75% { opacity: 0.2; }
+        100% { opacity: 0; }
+      }
+      
+      @keyframes bg-fade-2 {
+        0% { opacity: 0; }
+        25% { opacity: 0.2; }
+        50% { opacity: 0.5; }
+        75% { opacity: 0.8; }
+        100% { opacity: 1; }
+      }
+      
+  
+  
+
+  .mac-window {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height:500px;
     border-radius: 12px;
-    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #dcdcdc;
+    background-color: white;
   }
   
-  h1 {
-    margin-bottom: 15px;
-    font-size: 24px;
+  /* Header Bar */
+  .mac-header {
+    height: 32px;
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  .mac-header span {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .red { background-color: #ff5f57; }
+  .yellow { background-color: #ffbd2e; }
+  .green { background-color: #28c840; }
+  
+  /* Content */
+  .container {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  /* ============================= */
+/* 🌟 POPUP WINDOW MAC STYLE 🌟  */
+/* ============================= */
+.popup-window {
+    position: fixed;
+    top: 470px;
+    left: calc(50% + 180px);
+    width: 360px;
+    height: 280px;
+    background-color: #f5f5f7; /* Soft mac-like background */
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 150;
+    border: 1px solid #dcdcdc;
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  /* POPUP HEADER - MAC STYLE */
+  .popup-header {
+    height: 34px;
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid #dcdcdc;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* MAC-STYLE BUTTONS */
+  .mac-buttons {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .mac-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .mac-buttons .red { background-color: #ff5f57; }
+  .mac-buttons .yellow { background-color: #ffbd2e; }
+  .mac-buttons .green { background-color: #28c840; }
+  
+  /* POPUP CONTENT AREA */
+  .popup-content {
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 220px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
     color: #333;
   }
   
-  p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
+  /* MAC-STYLE SCROLLBAR */
+  .popup-content::-webkit-scrollbar {
+    width: 10px;
   }
   
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+  .popup-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid #f5f5f7;
+  }
+  
+  .popup-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup-content::-webkit-scrollbar-track {
+    background-color: #e5e5e5;
+    border-radius: 10px;
+  }
+  
+  /* STYLED LIST FOR EDUCATION */
+  .popup-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .popup-list li {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .popup-list li:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  /* FADE-IN ANIMATION */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  /* Mac-Style Dock Footer */
+/* MAC-STYLE DOCK */
+/* MAC-STYLE DOCK USING OPACITY */
+.mac-dock {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    overflow: visible;
+    z-index: 10;
+  }
+  
+  /* Transparent Background Layer (with opacity) */
+  .mac-dock::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Solid color with opacity */
+    opacity: 0.5; /* Adjust transparency here */
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: -1; /* Place behind icons */
+  }
+  
+  /* DOCK ICON STYLE */
+  .dock-icon {
+    margin: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease-out;
+    z-index: 10; /* Icons on top */
+  }
+  
+  .dock-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+    opacity: 1; /* Icons stay fully visible */
+    z-index: 10;
+  }
+  
+  /* DOCK ICON LABELS */
+/* Style for Dock Icon Titles */
+.dock-icon span {
+    position: absolute;
+    bottom:-25px; /* Keeps consistent spacing above the dock */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: rgba(50, 50, 50, 0.8);
     color: white;
-    background-color: #007acc;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 9px;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none; /* Avoids blocking clicks */
+    font-family: Arial, sans-serif;
   }
   
-  a:hover {
-    background-color: #005fa3;
+  /* Show Titles Only on Hover */
+  .dock-icon:hover span {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px); /* Subtle lift effect */
+  }
+  
+  
+/* Show Titles Only on Hover */
+.dock-icon:hover span {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px); /* Subtle lift effect */
+  }
+  
+  .dock-icon:hover span {
+    opacity: 1;
+  }
+  
+  /* REFLECTION EFFECT */
+  .dock-icon::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 5px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(3px);
+    z-index: 9;
+  }
+  
+  /* NEIGHBOR ZOOM EFFECT */
+  .mac-dock:hover .dock-icon {
+    transition: transform 0.2s ease-out;
+  }
+  
+  .mac-dock:hover .dock-icon:hover {
+    transform: scale(1.5);
+  }
+  
+  .mac-dock:hover .dock-icon:not(:hover) {
+    transform: scale(0.9);
   }
   

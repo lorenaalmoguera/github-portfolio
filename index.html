@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My GitHub Portfolio</title>
   <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
 </head>
 <body>
     <div class="bg-animation">
@@ -22,7 +23,7 @@
         <div class="container">
           <div class="content">
             <h2>Lorena Almoguera Romero</h2>
-            <p>Welcome to my portfolio.</p>
+            <p>A brief look into <b>my world.</b></p>
             <a href="#">Get Started</a>
           </div>
         </div>
@@ -56,26 +57,50 @@
             </div>
         </div>
   
-      
+        <!-- Rectangular Popup with Image and Text -->
+        <!-- Rectangular Popup with Image, Text, and Mac Buttons -->
+        <!-- Rectangular Popup with Image, Scrollable Text, and Mac Buttons -->
+<div class="wide-popup">
+  <div class="wide-popup-header">
+    <div class="mac-buttons">
+      <span class="red"></span>
+      <span class="yellow"></span>
+      <span class="green"></span>
+    </div>
+  </div>
+  <div class="wide-popup-body">
+    <div class="wide-popup-image">
+      <img src="img/pnglorena.png" alt="Profile">
+    </div>
+    <div class="wide-popup-content">
+      <h3>Hello and Welcome!</h3>
+      <p>I’m <b><u>Lorena</u></b>, a <i>Computer Engineering</i> student at Universidad Miguel Hernández de Elche with a passion for <u>software development</u>, <u>databases</u>, and <u>cloud computing</u>. With experience spanning from application development to cybersecurity, I thrive on tackling complex problems and delivering creative solutions.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
         <!-- Mac-style Dock Footer -->
         <div class="mac-dock">
-            <div class="dock-icon">
+            <div class="dock-icon" id="LinkedinIcon">
             <img src="img/linkedin.png" alt="Linkedin">
             <span>Linkedin</span>
             </div>
-            <div class="dock-icon">
+            <div class="dock-icon" id="GitHubIcon">
             <img src="img/github.png" alt="GitHub">
             <span>GitHub</span>
             </div>
-            <div class="dock-icon">
+            <div class="dock-icon" id="MyCVIcon">
             <img src="img/cv.png" alt="cv">
             <span>My CV</span>
             </div>
-            <div class="dock-icon">
+            <div class="dock-icon" id="MyProjectsIcon">
             <img src="img/notesapp.png" alt="Projects">
             <span>Projects</span>
             </div>
-            <div class="dock-icon">
+            <div class="dock-icon" id="TechStackIcon">
             <img src="img/vscode.png" alt="Tech Stack">
             <span>TechStack</span>
         </div>

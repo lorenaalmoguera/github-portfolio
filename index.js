@@ -63,3 +63,25 @@ function showMacAlert(url) {
     };
   }
   
+
+  // Add event listener for CV download
+document.addEventListener('DOMContentLoaded', function() {
+    const cvIcon = document.getElementById('cv-icon');
+    
+    if (cvIcon) {
+      cvIcon.addEventListener('click', function() {
+        downloadCV();
+      });
+    }
+  });
+  
+  // Function to Download CV
+  function downloadCV() {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = 'files/CV_2025_LORENA_ALMOGUERA_ROMERO.pdf'; // Path to your CV
+    downloadLink.download = 'CV_2025_LORENA_ALMOGUERA_ROMERO.pdf'; // Name of the downloaded file
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  }
+  

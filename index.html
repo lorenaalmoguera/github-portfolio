@@ -5,104 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My GitHub Portfolio</title>
   <link rel="stylesheet" href="index.css">
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="bg-1"></div>
-        <div class="bg-2"></div>
-        <div class="bg-3"></div>
-    </div>
+  <div class="bg-animation">
+    <div class="bg-1"></div>
+    <div class="bg-2"></div>
+    <div class="bg-3"></div>
+  </div>
 
+  <div class="mac-container">
+    <!-- Main Mac Window -->
     <div class="mac-window">
-        <div class="mac-header">
-          <span class="red"></span>
-          <span class="yellow"></span>
-          <span class="green"></span>
-        </div>
-        <div class="container">
-          <div class="content">
-            <h2>Lorena Almoguera Romero</h2>
-            <p>A brief look into <b>my world.</b></p>
-            <a href="#">Get Started</a>
+      <div class="mac-header">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
+      <div class="container">
+        <div class="content">
+          <h2>Lorena Almoguera Romero</h2>
+          <p>A brief look into <b>my world.</b></p>
+          <br><br><br><br>
+          <div class ="MyJourneyLink"> 
+            check out my learning journey
           </div>
         </div>
-      
-        <!-- Popup Window (like another tab) -->
-        <!-- Popup Window -->
-        <div class="popup-window">
-            <div class="popup-header">
-            <div class="mac-buttons">
-                <span class="red"></span>
-                <span class="yellow"></span>
-                <span class="green"></span>
-            </div>
-            <span class="popup-title">Education</span>
-            </div>
-            <div class="popup-content">
-            <ul class="popup-list">
-                <li>
-                🎓 <strong>Computer Engineering</strong><br>
-                <sub>Universidad Miguel Hernández de Elche (2020–2026)</sub>
-                </li>
-                <li>
-                🎓 <strong>Modern Languages with Translation</strong><br>
-                <sub>University of Birmingham (2018–2020) <b>withdrew</b></sub>
-                </li>
-                <li>
-                🎓 <strong>European School of Alicante</strong><br>
-                <sub>Escuela Europea de Alicante (2004–2018)</sub>
-                </li>
-            </ul>
-            </div>
+      </div>
+    </div>
+
+    <!-- Floating Popups -->
+    <div class="popup-container">
+      <!-- Popup: Education -->
+      <div class="popup-window">
+        <div class="popup-header">
+          <div class="mac-buttons">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+          <span class="popup-title">Education</span>
         </div>
-  
-        <!-- Rectangular Popup with Image and Text -->
-        <!-- Rectangular Popup with Image, Text, and Mac Buttons -->
-        <!-- Rectangular Popup with Image, Scrollable Text, and Mac Buttons -->
-<div class="wide-popup">
-  <div class="wide-popup-header">
+        <div class="popup-content">
+          <ul class="popup-list">
+            <li>🎓 <strong>Computer Engineering</strong><br>
+              <sub>Universidad Miguel Hernández de Elche (2020–2026)</sub>
+            </li>
+            <li>🎓 <strong>Modern Languages with Translation</strong><br>
+              <sub>University of Birmingham (2018–2020) <b>withdrew</b></sub>
+            </li>
+            <li>🎓 <strong>European School of Alicante</strong><br>
+              <sub>Escuela Europea de Alicante (2004–2018)</sub>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Popup: About Me -->
+      <div class="wide-popup">
+        <div class="wide-popup-header">
+          <div class="mac-buttons">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+          </div>
+        </div>
+        <div class="wide-popup-body">
+          <div class="wide-popup-image">
+            <img src="img/pnglorena.png" alt="Profile">
+          </div>
+          <div class="wide-popup-content">
+            <h3>Hello and Welcome!</h3>
+            <p>I’m <b><u>Lorena</u></b>, a <i>Computer Engineering</i> student at Universidad Miguel Hernández de Elche with a passion for <u>software development</u>, <u>databases</u>, and <u>cloud computing</u>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mac-style Dock -->
+    <div class="mac-dock">
+      <div class="dock-icon" id="LinkedinIcon">
+        <img src="img/linkedin.png" alt="Linkedin">
+        <span>Linkedin</span>
+      </div>
+      <div class="dock-icon" id="GitHubIcon">
+        <img src="img/github.png" alt="GitHub">
+        <span>GitHub</span>
+      </div>
+      <div class="dock-icon" id="cv-icon">
+        <img src="img/cv.png" alt="cv">
+        <span>My CV</span>
+      </div>
+      <div class="dock-icon" id="MyProjectsIcon">
+        <img src="img/notesapp.png" alt="Projects">
+        <span>Projects</span>
+      </div>
+      <div class="dock-icon" id="TechStackIcon">
+        <img src="img/vscode.png" alt="Tech Stack">
+        <span>TechStack</span>
+      </div>
+    </div>
+  </div>
+
+<!-- 📌 Fullscreen Popup (Initially Hidden) -->
+<div id="coursesPopup" class="courses-popup hidden">
+  <div class="courses-popup-header">
     <div class="mac-buttons">
-      <span class="red"></span>
+      <span class="red close-popup"></span>
       <span class="yellow"></span>
       <span class="green"></span>
     </div>
+    <h2>My Learning Journey</h2>
   </div>
-  <div class="wide-popup-body">
-    <div class="wide-popup-image">
-      <img src="img/pnglorena.png" alt="Profile">
-    </div>
-    <div class="wide-popup-content">
-      <h3>Hello and Welcome!</h3>
-      <p>I’m <b><u>Lorena</u></b>, a <i>Computer Engineering</i> student at Universidad Miguel Hernández de Elche with a passion for <u>software development</u>, <u>databases</u>, and <u>cloud computing</u>. With experience spanning from application development to cybersecurity, I thrive on tackling complex problems and delivering creative solutions.</p>
-    </div>
+
+  <div class="courses-popup-filters">
+    <input type="text" id="searchInput" placeholder="🔍 Search Courses..." onkeyup="filterCourses()">
+    <select id="categoryFilter" onchange="filterCourses()">
+      <option value="all">All Categories</option>
+      <option value="programming">Programming</option>
+      <option value="databases">Databases</option>
+      <option value="cloud">Cloud Computing</option>
+      <option value="cybersecurity">Cybersecurity</option>
+      <option value="networking">Networking</option>
+      <option value="python">Python</option>
+      <option value="SQL">SQL</option>
+      <option value="datacamp">DataCamp Courses</option>
+      <option value="cisco">Cisco Courses</option>
+      <option value="datascience">Data Science</option>
+      <option value="languages">Languages</option>
+    </select>
+  </div>
+
+  <div class="courses-popup-content">
+    <ul id="coursesList">
+      <li data-category="databases, datascience, cisco"><a href="https://www.credly.com/badges/78834452-4532-4165-a479-dc0b92f57d62/linked_in_profile" target="_blank"><b>📊 Introduction to Data Science</b> - <i>Cisco (March 2025)</a></i></li>
+      <li data-category="SQL, databases, programming, datacamp"><a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/f643b5228e2dfbd1e473d5e02483c1a95be79113" target="_blank"><b>🗄️ Database Design</b> - <i>Data Camp (March 2025)</i></a></li>
+      <li data-category="cloud, datacamp"><a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/0a08af28f28bab09ef6094c8f5a7e1960c2faafc" target="_blank"><b>☁️ AWS Concepts</b> - <i>Data Camp (March 2025)</i></a></li>
+      <li data-category="cisco, cybersecurity"><a href="https://www.credly.com/badges/de525fe0-abeb-4111-8f65-3679c7c885af/linked_in_profile" target ="_blank"><b>🕵️ Introduction to Cybersecurity</b> - <i>Cisco (November 2024)</i></a></li>
+      <li data-category="cisco, cybersecurity"><a href="https://www.credly.com/badges/df93a9b9-ccd7-4ba9-b476-2ab2fdd12666/linked_in_profile" target="_blank"><b>🕵️ Junior Cybersecurity Analyst Career Path</b> - <i>Cisco (November 2024)</i></a></li>
+      <li data-category="cisco, networking"><a href="https://www.credly.com/badges/e9ab0f28-a645-4935-8ba9-3727a0ebbd27/linked_in_profile" target="_blank"><b>🛜 Networking Basics</b> - <i>Cisco (November 2024)</i></a></li>
+      <li data-category="cisco, networking, cybersecurity"><a href="https://www.credly.com/badges/c892c49d-8d54-4396-bfbe-b9d48bdb5127/linked_in_profile" target="_blank"><b>🛜 Network Defense</b> - <i>Cisco (November 2024)</i></a></li>
+      <li data-category="cisco, python, programming"><a href="https://www.credly.com/badges/0035fdbd-5911-400b-a2f9-91ad4dffd1e7/linked_in_profile" target ="_blank"><b>🐍 Python Essentials 1</b> - <i>Cisco (February 2025)</i></a></li>
+      <li data-category="cisco, python, programming"><a href="https://www.credly.com/badges/3073f0d5-3fca-49ea-a2ed-f275699ae4a2/linked_in_profile" target ="_blank"><b>🐍 Python Essentials 2</b> - <i>Cisco (February 2025)</i></a></li>
+      <li data-category="databases, programming, datacamp"><a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/7384b7ce47239dcc7a8d0d576924471071bbbf56" target ="_blank"><b>📊 Introduction to NoSQL</b> - <i>(June 2024)</i></a></li>
+      <li data-category="cisco, cybersecurity"><a href="https://www.credly.com/badges/23db0e3e-5a4f-4837-83de-d7b1c97ff178/linked_in_profile" target="_blank"><b>👩‍💻 Introduction to IoT</b> - <i>Cisco (November 2023)</i></a></li>
+      <li data-category="languages"><a href="https://cert.efset.org/es/UkwobT" target="_blank"><b>🗣️ EF SET English C2 (80/100)</b> - <i> EF SET (January 2025)</i></a></li>
+      <li data-category="cisco, languages"><a href="https://www.credly.com/badges/28a3bdab-df82-473c-9541-1bc16f86b90a/linked_in_profile" target="_blank"><b>🗣️English for IT 1</b> - <i>Cisco (October 2024)</i></a></li>
+    
+    </ul>
   </div>
 </div>
 
 
-
-
-        <!-- Mac-style Dock Footer -->
-        <div class="mac-dock">
-            <div class="dock-icon" id="LinkedinIcon">
-            <img src="img/linkedin.png" alt="Linkedin">
-            <span>Linkedin</span>
-            </div>
-            <div class="dock-icon" id="GitHubIcon">
-            <img src="img/github.png" alt="GitHub">
-            <span>GitHub</span>
-            </div>
-            <div class="dock-icon" id="cv-icon">
-            <img src="img/cv.png" alt="cv">
-            <span>My CV</span>
-            </div>
-            <div class="dock-icon" id="MyProjectsIcon">
-            <img src="img/notesapp.png" alt="Projects">
-            <span>Projects</span>
-            </div>
-            <div class="dock-icon" id="TechStackIcon">
-            <img src="img/vscode.png" alt="Tech Stack">
-            <span>TechStack</span>
-        </div>
-    </div>
 </body>
+</html>
